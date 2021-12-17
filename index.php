@@ -22,7 +22,7 @@ $fa_name = $names[$en_name];
 if(isset($_POST["question"])){
 	$question = $_POST["question"];
 	$msg = $arr_jomle[intval(hash('gost', $question.$en_name))%16];
-	if(substr($question, 0, 6)!="آیا" ){// for PHP 8.0 and higher we could add : (|| str_ends_with($question,"?")==0 || str_ends_with($question,"؟")==0) but for me it didn't work.
+	if(substr($question, 0 , 6 ) != "آیا" ){// for PHP 8.0 and higher we could add : (|| str_ends_with($question,"?")==0 || str_ends_with($question,"؟")==0) but for me it didn't work.
 		$msg = "سوال درستی پرسیده نشده";
 	}
 }
