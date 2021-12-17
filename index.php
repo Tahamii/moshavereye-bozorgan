@@ -40,29 +40,26 @@ if(isset($_POST["question"])){
 <div id="wrapper">
     <div id="title">
         <span id="label">
-			<?php
-                if($question != "")
-                {
-                    echo "پرسش:";
-                }
-			?>
+		<?php
+                	if($question != ""){
+                    		echo "پرسش:";
+                	}
+		?>
 		</span>
         <span id="question"><?php echo $question ?></span>
     </div>
     <div id="container">
         <div id="message">
             <p>
-				<?php 
-					if ($question != "")
-					{
-						echo $msg;
-					}
-					else
-					{
-						echo "سوال خود را بپرس!";
-					}
-				?>
-			</p>
+		<?php 
+			if ($question != ""){
+				echo $msg;
+			}
+			else{
+				echo "سوال خود را بپرس!";
+			}
+		?>
+	</p>
         </div>
         <div id="person">
             <div id="person">
@@ -78,16 +75,16 @@ if(isset($_POST["question"])){
             را از
             <select name="person">
                 <?php
-					$js = file_get_contents('people.json');
-					$arr_name=json_decode($js,true);
-                    foreach ($arr_name as $key => $val){
-                        if ($key==$en_name){
-							echo "<option value=$key selected> $val</option>";
-                        }
-                       else{
-							echo "<option value=$key > $val</option>";
-                       }
-                    }
+			$js = file_get_contents('people.json');
+			$arr_name=json_decode($js,true);
+                   	 foreach ($arr_name as $key => $val){
+                       		if ($key==$en_name){
+					echo "<option value=$key selected> $val</option>";
+                        	}
+                       		else{
+					echo "<option value=$key > $val</option>";
+                      		 }
+                    	}
                 ?>
             </select>
             <input type="submit" value="بپرس"/>
